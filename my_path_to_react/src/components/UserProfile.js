@@ -7,7 +7,7 @@ import Bio from './Bio';
 
 import '../components/userProfile.css';
 
-const UserProfile = () => {
+const UserProfile = (props) => {
     return (
         <div className="userprofile" >
             <Avatar source={mukeshPro}/>
