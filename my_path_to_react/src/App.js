@@ -1,8 +1,18 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './components/navbar';
+import UserProfile from './components/UserProfile';
 
+import './'
 function App() {
   return (
-    <h1 className="center">hello React Learner</h1>
+    <div className= "navbar">
+      <Navbar />
+      <div className="userProfile center">
+        <UserProfile />
+      </div>
+    </div>
+   
   );
 }
 
