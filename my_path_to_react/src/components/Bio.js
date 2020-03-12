@@ -1,0 +1,15 @@
+import React from 'react';
+
+const Bio = (props) => {
+    const { bio } = props;
+    return (
+        <div className="container">
+            <div className="row">
+                <strong>Bio:</strong>
+                {bio}
+            </div>
+        </div>
+    );
+
+}
+export default Bio;

@@ -1,0 +1,14 @@
+.avatar{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.userprofile{
+    text-align: center;
+    margin-left:30% ;
+    border: solid;
+    border-radius: 5px;
+    width: 20%;
+    height: 30%;
+}
