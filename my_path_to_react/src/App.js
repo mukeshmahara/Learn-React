@@ -27,7 +27,7 @@ function App() {
 
           <div className="col-md-8">
             <div className="card p-3">
-            <h2 className="text-center btn  text-dark mb-3">Todo App</h2>
+            <span className="text-center btn  text-dark mb-3">Todo App</span>
             <Todolist /></div>
           </div>
 

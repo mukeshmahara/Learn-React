@@ -27,7 +27,7 @@ export default class TodoForm extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className="text-center">
             
                 <form onSubmit={this.handleSubmit} >
                     
@@ -40,7 +40,7 @@ export default class TodoForm extends React.Component {
 
                         value={this.state.text} />
 
-                    <button onClick={this.handleSubmit} className="btn btn-success mt-5">Add Todo</button>
+                    <button onClick={this.handleSubmit} className="btn btn-success mt-4 ">Add Todo</button>
                     
                 </form>
             </div>
