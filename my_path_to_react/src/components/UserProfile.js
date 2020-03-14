@@ -9,10 +9,13 @@ import '../components/userProfile.css';
 
 const UserProfile = (props) => {
     return (
-        <div className="userprofile" >
-            <Avatar source={mukeshPro}/>
-            <Username name="Mukesh Mahara"/>
-            <Bio bio="My name is mukesh mahara. I am pro"/>
+        <div className=" my-4">
+
+            <div className="    " >
+                <Avatar source={mukeshPro} className="" />
+                <Username name="Mukesh Mahara" className="" />
+                <Bio bio="My name is mukesh mahara. I am pro" />
+            </div>
         </div>
     );
 }

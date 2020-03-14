@@ -3,8 +3,8 @@ import React from 'react';
 const Bio = (props) => {
     const { bio } = props;
     return (
-        <div className="container">
-            <div className="row">
+        <div className="">
+            <div className="">
                 <strong>Bio:</strong>
                 {bio}
             </div>
