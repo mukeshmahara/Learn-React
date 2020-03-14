@@ -15,14 +15,14 @@ export default class Todolist extends React.Component {
     addTodo = (todo) => {
         // this.state.todos.push(todo);
         // const newTodos = {todo,...this.state.todos};
-        this.setState(state=>({
+        this.setState(state => ({
             todos: [todo, ...state.todos]
         }));
     };
 
     toggleComplete = (id) => {
 
-        this.setState(state=>({
+        this.setState(state => ({
             todos: this.state.todos.map(todo => {
                 // suppose to update
                 if (todo.id === id) {
@@ -49,13 +49,13 @@ export default class Todolist extends React.Component {
     }
 
     handleDeleteTodo = (id) => {
-        this.setState(state=>{
+        this.setState(state => {
             todos: state.todos.filter(todo => todo.id !== id)
         });
     }
 
     removeAllTodoThatAreComplete = () => {
-        this.setState(state=>({
+        this.setState(state => ({
             todos: state.todos.filter(todo => !todo.complete)
         }));
     }
@@ -92,8 +92,22 @@ export default class Todolist extends React.Component {
 
                 <div>
                     <button className="btn btn-primary mr-2" onClick={() => this.updateTodoToShow("all")}>All</button>
-                    <button className="btn btn-danger mr-2" onClick={() => this.updateTodoToShow("active")}>Active</button>
-                    <button className="btn btn-warning mr-2" onClick={() => this.updateTodoToShow("complete")}>Complete</button>
+                    <button className="btn btn-outline-primary mr-2" onClick={() => this.updateTodoToShow("active")}>Active</button>
+                    <button className="btn btn-outline-warning mr-2" onClick={() => this.updateTodoToShow("complete")}>Complete</button>
+
+                    <button onClick={() =>
+                        this.setState(state => ({
+                            todos: state.todos.map(todo => ({
+                                ...todo,
+                                complete: state.toggleAllComplete
+                            })),
+                            toggleAllComplete: !state.toggleAllComplete
+                        }))
+
+                    }
+                        className="btn btn-secondary mr-2"
+                    >Mark All: {`${this.state.toggleAllComplete}`}</button>
+
                 </div>
                 {
                     this.state.todos.some(todo => todo.complete).length ? (
@@ -104,20 +118,7 @@ export default class Todolist extends React.Component {
                         </div>
                     ) : null
                 }
-                <div>
-                    <button onClick={() =>
-                        this.setState(state=>({
-                            todos: state.todos.map(todo => ({
-                                ...todo,
-                                complete: state.toggleAllComplete
-                            })),
-                            toggleAllComplete:!state.toggleAllComplete
-                        }))
 
-                    }
-                    className="btn btn-dark mt-2"
-                    >toggle All Complete: {`${this.state.toggleAllComplete}`}</button>
-                </div>
 
             </div>
 
