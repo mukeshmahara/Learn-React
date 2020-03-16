@@ -1,36 +1,72 @@
 import React from 'react';
 
 
+import PostData from './services/PostData';
 
 
-const Login = () => {
 
-    return (
-        <div className="container">
-            <div className="row">
-                <div className="col-lg-12">
 
-                    <form className="form-group p-4">
+export default class Login extends React.Component {
 
-                     
-                    <i class="fa fa-lock" aria-hidden="true"></i>
-                        <label for="user" className="mt-4">Username</label>
-                        <input id ="user" className="form-control glyphicon glyphicon-user " type="text" ></input>
-                        
-                        
-                        <span>
-                        <label for="pass" className="mt-4">Password</label>
-                            <input id="pass" className="form-control" type="password"></input>
-                        </span>
-                        <input className="btn btn-outline-primary mt-4 col-lg-12" type="submit" value="login"></input>
-                    </form>
-                </div>
-            </div>
+// componentDidMount=()=>{
+//     console.log("Component Mounted")
+// }
 
-        </div>
-
-    );
-
+constructor(props){
+    super(props);
+    this.state = {
+        username: '',
+        password:''
+    }
+    // this.login = this.login.bind(this);
+    // this.onChange = this.login.bind(this);
 }
 
-export default Login;
+
+login=(e)=>{
+    e.preventDefault();
+    PostData('login',this.state).then((result)=>{
+        let responseJSON = result;
+        console.log(responseJSON); 
+    });
+
+    
+}
+
+onChange=(e)=>{
+    this.setState({
+        [e.target.name]:e.target.value
+        
+    })
+    console.log(this.state)
+}
+
+    render() {
+
+        return (
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-12">
+
+                        <form className="form-group p-4">
+
+
+                            <label for="user" className="mt-4">Username</label>
+                            <input id="user" className="form-control" type="text" onChange= {this.onChange} ></input>
+
+
+                            <span>
+                                <label for="pass" className="mt-4">Password</label>
+                                <input id="pass" className="form-control" type="password" onChange={this.onChange}></input>
+                            </span>
+                            <input className="btn btn-outline-primary mt-4 col-lg-12" type="submit" value="login" onClick={this.login}></input>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        );
+
+    }
+}
