@@ -73,23 +73,28 @@ const Card = props =>
         </div>
     </div>;
 
-
 const Toys = props =>
     <>
         <h1 id="toys"
             className="display-4 my-4 text-center text-muted">Toys
         </h1>
-        
+
+        <Toys toys={this.props.toys} />
+
         <div className="row">
             {props.toys.map((toy, index) => <Card key={index} toy={toy} />)}
         </div>
-    </>; 
+    </>;
+
 
 const Application = (props) => {
     return (
         <div>
 
-            {console.log("Application Compoentnt")}
+
+            
+
+
 
         </div>
     );
