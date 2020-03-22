@@ -51,12 +51,12 @@ onChange=(e)=>{
                         <form className="form-group p-4">
 
 
-                            <label for="user" className="mt-4">Username</label>
+                            <label htmlFor = "user" className="mt-4">Username</label>
                             <input id="user" className="form-control" type="text" onChange= {this.onChange} ></input>
 
 
                             <span>
-                                <label for="pass" className="mt-4">Password</label>
+                                <label htmlFor="pass" className="mt-4">Password</label>
                                 <input id="pass" className="form-control" type="password" onChange={this.onChange}></input>
                             </span>
                             <input className="btn btn-outline-primary mt-4 col-lg-12" type="submit" value="login" onClick={this.login}></input>
