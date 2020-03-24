@@ -10,6 +10,10 @@ import Todolist from './components/TodoComponents/Todolist';
 import Login from './components/LoginComponent/Login';
 
 
+import Application from './components/Project1Component/Application';
+
+
+
 
 
 function App() {
@@ -19,8 +23,8 @@ function App() {
         <Navbar />
       </div>
       <div className="container  ">
-      <element/>
-      
+        <element />
+
         <div className="row mt-5">
 
           <div className="col-md-4">
@@ -36,6 +40,11 @@ function App() {
             <div className="card p-3">
               <span className="text-center btn  text-dark mb-3">Todo App</span>
               <Todolist /></div>
+
+            <div className="card p-3">
+              <span className="text-center btn  text-dark mb-3">Applicatoin</span>
+              <Application toys={toys}/>
+            </div>
           </div>
 
 
