@@ -1,0 +1,28 @@
+{
+  "name": "learn-react",
+  "version": "1.0.0",
+  "description": "A node.js RESTful API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mukeshmahara/Learn-React.git"
+  },
+  "keywords": [
+    "node",
+    "restful",
+    "API"
+  ],
+  "author": "Mukesh Mahara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mukeshmahara/Learn-React/issues"
+  },
+  "homepage": "https://github.com/mukeshmahara/Learn-React#readme",
+  "dependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
